@@ -1,0 +1,17 @@
+Incoming Request
+   ↓
+server.js (sets up routes)
+   ↓
+Route matches → Middleware chain starts
+   ↓
+Validation middleware checks inputs
+   ↓
+If invalid → next(err) → error handler → send error response
+   ↓
+If valid → next() → controller runs
+   ↓
+Controller uses req/res to do business logic
+   ↓
+If controller encounters unexpected error → next(err) → error handler
+   ↓
+If no error → controller sends success response
